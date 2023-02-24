@@ -8,7 +8,7 @@
     <section class="flex flex-row flex-wrap items-stretch">
         @foreach ($posts as $post)
             <div class="w-full sm:w-1/2 lg:w-1/3 pb-6 ">
-                <div class="card bg-gray-700/40 rounded-2xl flex flex-col justify-between m-2 p-5 shadow h-full">
+                <div class="card bg-slate-700/40 rounded-2xl flex flex-col justify-between m-2 p-5 shadow h-full">
                     <div>
                         <a class="block w-full font-bold hyperlink"
                             href="{{ route('posts.show', $post) }}">{{ $post->title }}</a>

@@ -14,9 +14,7 @@
     <style>
         html,
         body {
-            background-color: #fff;
-            color: #636b6f;
-            font-family: 'Nunito', sans-serif;
+            font-family: "Nunito", sans-serif;
             font-weight: 200;
             height: 100vh;
             margin: 0;
@@ -73,7 +71,7 @@
         </div>
 
         <div class="content">
-            <div class="title m-b-md">
+            <div class="title m-b-md text-red-500 font-bold">
                 Blog
             </div>
         </div>
