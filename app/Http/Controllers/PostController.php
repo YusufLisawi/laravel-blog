@@ -7,12 +7,6 @@ use Illuminate\Http\Request;
 
 class PostController extends Controller
 {
-    /**
-     * @param  Request  $request
-     * @param  string  $id
-     * @return Response
-     */
-
     public function __invoke()
     {
         // or $posts = Post::latest()->get();
@@ -20,9 +14,13 @@ class PostController extends Controller
         return view('posts.index', compact('posts'));
     }
 
-    public function getPostById($id)
+    public function showPost(Post $post)
     {
-        $post = Post::find($id);
-        return view('posts.post', compact('post'));
+        return view('posts.show', compact('post'));
+    }
+
+    public function createPost()
+    {
+        return view('posts.create');
     }
 }
