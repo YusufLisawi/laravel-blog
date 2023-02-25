@@ -19,6 +19,7 @@ Route::get('/', function () {
 });
 
 Route::get('/posts', PostController::class)->name('posts.index');
+Route::delete('/posts/delete/{post}', [PostController::class, 'deletePost'])->name('posts.delete');
 Route::post('/posts/store', [PostController::class, 'storePost'])->name('posts.store');
 Route::put('/posts/update/{post}', [PostController::class, 'updatePost'])->name('posts.update');
 Route::get('/posts/edit/{post}', [PostController::class, 'editPost'])->name('posts.edit');

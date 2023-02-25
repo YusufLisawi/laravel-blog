@@ -59,4 +59,10 @@ class PostController extends Controller
 
         return redirect()->route('posts.show', compact('post'));
     }
+
+    public function deletePost(Post $post)
+    {
+        $post->delete();
+        return redirect()->route('posts.index');
+    }
 }

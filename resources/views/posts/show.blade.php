@@ -13,11 +13,15 @@
             <h2 class="text-xl font-bold flex items-center gap-2">
                 {{ $post->title }}
                 <a class="" href="{{ route('posts.edit', $post) }}">
-                    <p class="text-red-500 text-xl font-bold">&#9998;</p>
+                    <p class="duration-200 hover:text-gray-500 text-xl font-bold">&#9998;</p>
                 </a>
-                <a class="" href="{{ route('posts.edit', $post) }}">
-                    <p class="text-red-500 text-sm font-bold">&#128465;</p>
-                </a>
+                <form action='{{ route('posts.delete', $post) }}' method='POST' id="deleteForm">
+                    @csrf
+                    @method('DELETE')
+                    <button class="" type="submit">
+                        @include('posts.deleteIcon')
+                    </button>
+                </form>
             </h2>
             <small class="text-gray-400">by
                 <span class="text-red-500 font-semibold">{{ $post->user->name }}</span> at
@@ -38,4 +42,14 @@
             </ul>
         </div>
     </div>
+    <script>
+        const deleteForm = document.querySelector("#deleteForm");
+
+        deleteForm.addEventListener("submit", function(e) {
+            e.preventDefault();
+            if (confirm("Are you sure you want to delete this post?")) {
+                e.target.submit();
+            }
+        });
+    </script>
 @endsection
