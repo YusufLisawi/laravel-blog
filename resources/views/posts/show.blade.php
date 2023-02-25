@@ -30,7 +30,7 @@
             <h3 class="text-red-500 text-lg font-semibold mb-2">Comments ({{ count($post->comments) }})</h3>
             <ul>
                 @foreach ($post->comments as $comment)
-                    <li class="bg-gray-700/60 py-3 px-5 rounded-xl">
+                    <li class="bg-gray-700/60 py-3 px-5 rounded-xl mb-4">
                         <small class="text-red-500 font-semibold">{{ $comment->user->name }}</small>
                         <p>{{ $comment->body }}</p>
                     </li>
