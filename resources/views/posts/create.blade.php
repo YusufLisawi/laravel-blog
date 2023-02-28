@@ -17,7 +17,7 @@
                         Title
                     </x-input-label>
                     @error('title')
-                        <p class="text-red-600 text-sm mb-1">{{ $message }}</p>
+                        <x-input-error></x-input-error>
                     @enderror
                     <input class="form-control" name="title" id="title" type="text"
                         value="{{ old('title') }}">
@@ -27,7 +27,7 @@
                         Content
                     </x-input-label>
                     @error('content')
-                        <p class="text-red-600 text-sm mb-1">{{ $message }}</p>
+                        <x-input-error></x-input-error>
                     @enderror
                     <textarea name="content" id="desc" cols="30" rows="10">{{ old('content') }}</textarea>
                 </div>

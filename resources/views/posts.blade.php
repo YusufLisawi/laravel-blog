@@ -22,9 +22,9 @@
                             <div>
                                 <small class="text-red-600 font-semibold">{{ $post->user->name }}</small>
                                 <a class="block w-full font-bold hyperlink"
-                                    href="{{ route('posts.show', $post) }}">{{ $post->title }}</a>
+                                    href="{{ route('posts.show', $post) }}">{{ __($post->title) }}</a>
                                 <p>
-                                    {{ substr($post->content, 0, 100) }}
+                                    {{ substr(__($post->content), 0, 100) }}
                                     @if (strlen($post->content) > 50)
                                         ...
                                     @endif
@@ -32,7 +32,7 @@
                             </div>
                             <div class="text-right">
                                 <a class="block w-full hyperlink font-semibold text-red-600 hover:text-red-400"
-                                    href="{{ route('posts.show', $post) }}">Read more</a>
+                                    href="{{ route('posts.show', $post) }}">{{ __('Read more') }}</a>
                             </div>
                         </div>
                     </div>

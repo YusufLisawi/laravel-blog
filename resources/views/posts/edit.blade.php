@@ -18,18 +18,23 @@
                     </x-input-label>
                     <input class="form-control" name="title" id="title" type="text" placeholder="Title"
                         required value="{{ $post->title }}">
+                    @error('title')
+                        <x-input-error></x-input-error>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <x-input-label name="Content">
                         Content
                     </x-input-label>
                     <textarea name="content" id="desc" cols="30" rows="10" required placeholder="Content">{{ $post->content }}</textarea>
+                    @error('content')
+                        <x-input-error></x-input-error>
+                    @enderror
                 </div>
                 <div class="flex items-center justify-between">
-                    <button class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-lg"
-                        type="submit">
-                        Update post
-                    </button>
+                    <x-primary-button>
+                        {{ __('Update post') }}
+                    </x-primary-button>
                 </div>
             </form>
         </div>

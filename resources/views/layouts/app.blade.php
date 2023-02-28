@@ -33,6 +33,15 @@
         <main class="text-black dark:text-white">
             {{ $slot }}
         </main>
+        <footer class="flex justify-center items-center gap-2 text-gray-300">
+            <p>Blog &copy; 2023 | </p>
+            <div class="flex gap-3">
+                <a href="{{ route('lang-switch', 'ar') }}" class="font-bold duration-100 hover:text-red-600">Ar</a>
+                <a href="{{ route('lang-switch', 'fr') }}" class="font-bold duration-100 hover:text-red-600">Fr</a>
+                <a href="{{ route('lang-switch', 'en') }}" class="font-bold duration-100 hover:text-red-600">En</a>
+                <a href="{{ route('lang-switch', 'es') }}" class="font-bold duration-100 hover:text-red-600">Es</a>
+            </div>
+        </footer>
     </div>
 </body>
 
