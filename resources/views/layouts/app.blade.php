@@ -23,7 +23,7 @@
         <!-- Page Heading -->
         @if (isset($header))
             <header class="bg-white dark:bg-gray-800 shadow">
-                <div class="max-w-7xl mx-auto py-6 px-4 px-3">
+                <div class="max-w-7xl mx-auto py-6 px-4">
                     {{ $header }}
                 </div>
             </header>
@@ -36,10 +36,18 @@
         <footer class="flex justify-center items-center gap-2 text-gray-300">
             <p>Blog &copy; 2023 | </p>
             <div class="flex gap-3">
-                <a href="{{ route('lang-switch', 'ar') }}" class="font-bold duration-100 hover:text-red-600">Ar</a>
-                <a href="{{ route('lang-switch', 'fr') }}" class="font-bold duration-100 hover:text-red-600">Fr</a>
-                <a href="{{ route('lang-switch', 'en') }}" class="font-bold duration-100 hover:text-red-600">En</a>
-                <a href="{{ route('lang-switch', 'es') }}" class="font-bold duration-100 hover:text-red-600">Es</a>
+                <a href="{{ route('lang-switch', 'ar') }}" class="font-bold duration-100 hover:text-red-600">
+                    Ar
+                </a>
+                <a href="{{ route('lang-switch', 'fr') }}" class="font-bold duration-100 hover:text-red-600">
+                    Fr
+                </a>
+                <a href="{{ route('lang-switch', 'en') }}" class="font-bold duration-100 hover:text-red-600">
+                    En
+                </a>
+                <a href="{{ route('lang-switch', 'es') }}" class="font-bold duration-100 hover:text-red-600">
+                    Es
+                </a>
             </div>
         </footer>
     </div>
