@@ -8,7 +8,7 @@
     </x-slot>
 
     <div class="py-8">
-        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-3xl mx-auto px-3">
             <form class="px-6 py-4 mx-auto" action="{{ route('posts.update', $post) }}" method='POST'>
                 @csrf
                 @method('PUT')

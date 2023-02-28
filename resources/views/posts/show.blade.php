@@ -8,7 +8,7 @@
     </x-slot>
 
     <div class="py-12">
-        <div class="max-w-4xl text-black dark:text-white mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-4xl text-black dark:text-white mx-auto px-3">
             <div>
                 <div class="mb-8">
                     <h2 class="text-xl font-bold flex items-center gap-2">

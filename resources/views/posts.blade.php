@@ -13,7 +13,7 @@
     </x-slot>
 
     <div class="py-8">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl mx-auto px-3">
             <section class="flex flex-row flex-wrap items-stretch">
                 @foreach ($posts as $post)
                     <div class="w-full sm:w-1/2 lg:w-1/3 pb-6 ">
