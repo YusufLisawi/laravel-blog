@@ -1,37 +1,42 @@
-@extends('master')
-@section('meta')
-    <title>Create post</title>
-@endsection
-@section('content')
-    <form class="px-6 py-4 mx-auto" action="{{ route('posts.store') }}" method='POST'>
-        <a class="" href="{{ route('posts.index') }}">
-            <p class="text-red-500 text-3xl font-bold mb-3">&larrb;</p>
-        </a>
-        @csrf
-        <div class="mb-4">
-            <label class="block text-md font-bold mb-2" for="title">
-                Title
-            </label>
-            @error('title')
-                <p class="text-red-500 text-sm mb-1">{{ $message }}</p>
-            @enderror
-            <input class="bg-gray-700/50 rounded w-full py-2 px-3 leading-tight focus:outline-none focus:shadow-outline"
-                name="title" id="title" type="text" placeholder="Title" value="{{ old('title') }}">
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            <a class="duration-100 hover:text-red-600" href="{{ route('posts.index') }}">
+                Posts
+            </a> / {{ __('Add post') }}
+        </h2>
+    </x-slot>
+
+    <div class="py-8">
+        <div class="max-w-3xl mx-auto sm:px-6 lg:px-8">
+            <form class="px-6 py-4 mx-auto" action="{{ route('posts.store') }}" method='POST'>
+
+                @csrf
+                <div class="mb-4">
+                    <x-input-label name="Title">
+                        Title
+                    </x-input-label>
+                    @error('title')
+                        <p class="text-red-600 text-sm mb-1">{{ $message }}</p>
+                    @enderror
+                    <input class="form-control" name="title" id="title" type="text"
+                        value="{{ old('title') }}">
+                </div>
+                <div class="mb-4">
+                    <x-input-label name="Content">
+                        Content
+                    </x-input-label>
+                    @error('content')
+                        <p class="text-red-600 text-sm mb-1">{{ $message }}</p>
+                    @enderror
+                    <textarea name="content" id="desc" cols="30" rows="10">{{ old('content') }}</textarea>
+                </div>
+                <div class="flex items-center justify-between">
+                    <x-primary-button>
+                        {{ __('Add post') }}
+                    </x-primary-button>
+                </div>
+            </form>
         </div>
-        <div class="mb-4">
-            <label for="content" class="block  text-md font-bold mb-2">Content</label>
-            @error('content')
-                <p class="text-red-500 text-sm mb-1">{{ $message }}</p>
-            @enderror
-            <textarea name="content" id="desc" cols="30" rows="10" placeholder="Content"
-                class="bg-gray-700/50 rounded w-full  py-2 px-3 focus:outline-none focus:shadow-outline">{{ old('content') }}</textarea>
-        </div>
-        <div class="flex items-center justify-between">
-            <button
-                class="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded focus:outline-none focus:shadow-outline"
-                type="submit">
-                Add post
-            </button>
-        </div>
-    </form>
-@endsection
+    </div>
+</x-app-layout>
