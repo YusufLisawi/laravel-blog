@@ -4,11 +4,11 @@
             <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
                 {{ __('Posts') }}
             </h2>
-            <x-primary-button>
-                <a href="{{ route('posts.create') }}">
+            <a href="{{ route('posts.create') }}">
+                <x-primary-button>
                     {{ __('Add post') }}
-                </a>
-            </x-primary-button>
+                </x-primary-button>
+            </a>
         </div>
     </x-slot>
 

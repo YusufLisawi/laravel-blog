@@ -16,19 +16,19 @@
                     <x-input-label name="Title">
                         Title
                     </x-input-label>
-                    <input class="form-control" name="title" id="title" type="text" placeholder="Title"
-                        required value="{{ $post->title }}">
+                    <input class="form-control" name="title" id="title" type="text"
+                        value="{{ $post->title }}">
                     @error('title')
-                        <x-input-error></x-input-error>
+                        <x-input-error messages="{{ $message }}"></x-input-error>
                     @enderror
                 </div>
                 <div class="mb-4">
                     <x-input-label name="Content">
                         Content
                     </x-input-label>
-                    <textarea name="content" id="desc" cols="30" rows="10" required placeholder="Content">{{ $post->content }}</textarea>
+                    <textarea name="content" id="desc" cols="30" rows="10">{{ $post->content }}</textarea>
                     @error('content')
-                        <x-input-error></x-input-error>
+                        <x-input-error messages="{{ $message }}"></x-input-error>
                     @enderror
                 </div>
                 <div class="flex items-center justify-between">

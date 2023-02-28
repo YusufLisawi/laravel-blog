@@ -16,20 +16,20 @@
                     <x-input-label name="Title">
                         Title
                     </x-input-label>
-                    @error('title')
-                        <x-input-error></x-input-error>
-                    @enderror
                     <input class="form-control" name="title" id="title" type="text"
                         value="{{ old('title') }}">
+                    @error('title')
+                        <x-input-error messages="{{ $message }}"></x-input-error>
+                    @enderror
                 </div>
                 <div class="mb-4">
                     <x-input-label name="Content">
                         Content
                     </x-input-label>
-                    @error('content')
-                        <x-input-error></x-input-error>
-                    @enderror
                     <textarea name="content" id="desc" cols="30" rows="10">{{ old('content') }}</textarea>
+                    @error('content')
+                        <x-input-error messages="{{ $message }}"></x-input-error>
+                    @enderror
                 </div>
                 <div class="flex items-center justify-between">
                     <x-primary-button>
