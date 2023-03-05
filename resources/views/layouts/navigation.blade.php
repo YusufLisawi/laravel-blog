@@ -1,6 +1,6 @@
 <nav x-data="{ open: false }" class="bg-white dark:bg-gray-800 border-b border-gray-100 dark:border-gray-700">
     <!-- Primary Navigation Menu -->
-    <div class="max-w-7xl mx-auto px-4 px-3">
+    <div class="max-w-7xl mx-auto px-3">
         <div class="flex justify-between h-16">
             <div class="flex">
                 <!-- Logo -->
@@ -18,11 +18,15 @@
                     <x-nav-link :href="route('posts.index')" :active="request()->routeIs('posts.index')">
                         {{ __('Posts') }}
                     </x-nav-link>
+                    <x-nav-link :href="route('users.index')" :active="request()->routeIs('users.index')">
+                        {{ __('Users') }}
+                    </x-nav-link>
                 </div>
             </div>
 
             <!-- Settings Dropdown -->
             <div class="hidden sm:flex sm:items-center sm:ml-6">
+
                 <x-dropdown align="right" width="48">
                     <x-slot name="trigger">
                         <button

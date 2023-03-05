@@ -15,6 +15,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::get('/users', function () {
+    return view('users.index');
+})
+    ->middleware(['auth', 'verified'])->name('users.index');
+
 Route::get('/dashboard', function () {
     return redirect('/');
 });
