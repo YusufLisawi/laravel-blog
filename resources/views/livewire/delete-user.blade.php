@@ -13,9 +13,9 @@
             <x-secondary-button wire:click="$emit('closeModal')">
                 Cancel
             </x-secondary-button>
-            <x-primary-button wire:click="confirm">
+            <x-danger-button wire:click="confirm">
                 Confirm
-            </x-primary-button>
+            </x-danger-button>
         </div>
     </div>
 
