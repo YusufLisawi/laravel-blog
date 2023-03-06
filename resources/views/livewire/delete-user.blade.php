@@ -10,7 +10,7 @@
         @endif
         <div class="font-normal text-gray-600">{{ $confirmationDescription }}</div>
         <div class="space-x-2 flex justify-end mt-3">
-            <x-secondary-button wire:click="$emit('closeModal')">
+            <x-secondary-button wire:click="cancel">
                 Cancel
             </x-secondary-button>
             <x-danger-button wire:click="confirm">
