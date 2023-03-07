@@ -2,13 +2,7 @@
     <div class="font-semibold font-gray-700 text-lg">{{ $confirmationTitle }}</div>
 
     <div class="py-2">
-        @if($userId)
-            userId: {{ $userId }}
-        @endif
-        @if($userIds)
-            userIds: @json($userIds)
-        @endif
-        <div class="font-normal text-gray-600">{{ $confirmationDescription }}</div>
+        <div class="font-normal">{{ $confirmationDescription }}</div>
         <div class="space-x-2 flex justify-end mt-3">
             <x-secondary-button wire:click="cancel">
                 Cancel
