@@ -10,36 +10,31 @@ use Illuminate\Support\Facades\Log;
 class EditUser extends ModalComponent
 {
     public ?int $userId = null;
+    public User $user;
     public $name;
     public $email;
-
-    public $oldname;
-    public $oldemail;
 
     protected $rules = [
         'name' => 'required|string',
         'email' => 'required|email',
-        // unique:users,email
     ];
 
     public function mount(int $userId)
     {
-        $this->userId = $userId;
-        $user = user::query()->find($this->userId)->getAttributes();
-        $this->oldname = $user['name'];
-        $this->oldemail = $user['email'];
+        $this->user = User::find($userId);
+        $this->name = $this->user->name;
+        $this->email = $this->user->email;
     }
 
-    public function save()
+    public function update()
     {
-        $validatedData = $this->validate();
+        // $this->validate();
 
-        $name = $this->name;
-        $email = $this->email;
-
-        if ($this->userId) {
-            $user = user::query()->find($this->userId);
-        }
+        $this->user->update([
+            'name' => $this->name,
+            'email' => $this->email,
+        ]);
+        $this->dispatchBrowserEvent('succsess', ['message' => 'User updated sucssefully']);
 
         $this->closeModalWithEvents([
             'pg:eventRefresh-default',
