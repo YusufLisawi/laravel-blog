@@ -4,6 +4,8 @@ namespace App\Http\Livewire;
 
 use App\Models\User;
 use LivewireUI\Modal\ModalComponent;
+use Illuminate\Support\Facades\Log;
+
 
 class EditUser extends ModalComponent
 {
@@ -16,8 +18,17 @@ class EditUser extends ModalComponent
 
     protected $rules = [
         'name' => 'required|string',
-        'email' => 'required|email|unique:users,email',
+        'email' => 'required|email',
+        // unique:users,email
     ];
+
+    public function mount(int $userId)
+    {
+        $this->userId = $userId;
+        $user = user::query()->find($this->userId)->getAttributes();
+        $this->oldname = $user['name'];
+        $this->oldemail = $user['email'];
+    }
 
     public function save()
     {
@@ -35,13 +46,6 @@ class EditUser extends ModalComponent
         ]);
     }
 
-    public function mount(int $userId)
-    {
-        $this->userId = $userId;
-        $user = user::query()->find($this->userId)->getAttributes();
-        $this->oldname = $user['name'];
-        $this->oldemail = $user['email'];
-    }
 
     public function render()
     {

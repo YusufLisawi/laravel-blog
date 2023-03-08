@@ -16,7 +16,7 @@
         x-on:keydown.shift.tab.prevent="prevFocusable().focus()" x-show="show" class="fixed inset-0 z-10 overflow-y-auto"
         style="display: none;">
         <div class="flex items-end justify-center min-h-screen px-4 pt-4 pb-10 text-center sm:block sm:p-0">
-            <div x-show="show" class="fixed inset-0 transform transition-all" x-on:click="show = false"
+            <div x-show="show" class="fixed inset-0 transform transition-all" x-on:click="closeModal()"
                 x-transition:enter="ease-out duration-100" x-transition:enter-start="opacity-0"
                 x-transition:enter-end="opacity-100" x-transition:leave="ease-in duration-100"
                 x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0">
